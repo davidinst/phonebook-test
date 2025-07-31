@@ -81,7 +81,7 @@
   become: true
   vars:
     container_name: postgre
-    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo/cw-todo-app:postgre
+    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/cclarusway-repo-david/cw-todo-app:postgre
   tasks:
     - name: remove postgre container
       community.docker.docker_container:
@@ -111,7 +111,7 @@
   become: true
   vars:
     container_name: nodejs
-    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo/cw-todo-app:nodejs
+    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo-david/cw-todo-app:nodejs
   tasks:
     - name: remove postgre container
       community.docker.docker_container:
@@ -137,7 +137,7 @@
   become: true
   vars:
     container_name: react
-    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo/cw-todo-app:react
+    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo-david/cw-todo-app:react
   tasks:
     - name: remove postgre container
       community.docker.docker_container:
