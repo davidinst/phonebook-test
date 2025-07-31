@@ -2,7 +2,7 @@ plugin: aws_ec2
 regions:
   - "us-east-1"
 filters:
-  tag:stack: david-ansible_project
+  tag:stack: david_ansible_project
 keyed_groups:
   - key: tags.Name
   - key: tags.environment
