@@ -81,7 +81,7 @@
   become: true
   vars:
     container_name: postgre
-    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/cclarusway-repo-david/cw-todo-app:postgre
+    image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo-david/cw-todo-app:postgre
   tasks:
     - name: remove postgre container
       community.docker.docker_container:
