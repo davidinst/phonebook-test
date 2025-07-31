@@ -24,7 +24,7 @@ resource "aws_instance" "managed_nodes" {
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
   tags = {
-    Name = "ansible_${element(var.tags, count.index )}"
+    Name = "david-ansible_${element(var.tags, count.index )}"
     stack = "ansible_project"
     environment = "development"
   }
