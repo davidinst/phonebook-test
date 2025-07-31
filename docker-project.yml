@@ -1,5 +1,5 @@
 - name: install docker and config
-  hosts: _development
+  hosts: _david_development
   become: true
   vars:
     aws_region: us-east-1
@@ -78,7 +78,7 @@
         aws ecr get-login-password --region {{ aws_region }} | docker login --username AWS --password-stdin {{ ecr_registry }}
 
 - name: postgre database config
-  hosts: _ansible_postgresql
+  hosts: _david_ansible_postgresql
   become: true
   vars:
     container_name: postgre
@@ -108,7 +108,7 @@
           - /db-data:/var/lib/postgresql/data
 
 - name: Nodejs Server configuration
-  hosts: _ansible_nodejs
+  hosts: _david_ansible_nodejs
   become: true
   vars:
     container_name: nodejs
