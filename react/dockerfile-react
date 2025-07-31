@@ -6,11 +6,11 @@ WORKDIR /app
 
 COPY ./react/client/package*.json ./
 
-RUN yarn install
+RUN npm install
 
 # copy all files into the image
 COPY ./react/client/ .
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "start"]
+CMD ["npm", "start"]
