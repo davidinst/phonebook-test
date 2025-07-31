@@ -21,9 +21,9 @@ variable "tags" {
 }
 
 resource "aws_instance" "managed_nodes" {
-  ami = "ami-0c7af5fe939f2677f"
+  ami = "ami-08a6efd148b1f7504"
   count = 3
-  instance_type = "t2.micro" 
+  instance_type = "t3.small" 
   key_name = "davidskey"
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
