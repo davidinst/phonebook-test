@@ -133,7 +133,7 @@
           - "5000:5000"
 
 - name: React UI Server configuration
-  hosts: _ansible_react
+  hosts: david_ansible_react
   become: true
   vars:
     container_name: react
