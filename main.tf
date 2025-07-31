@@ -5,11 +5,7 @@ terraform {
       version = "~> 5.0"
     }
   }
-  backend "s3" {
-    bucket = "jenkins-project-backend-david"
-    key = "backend/tf-backend-jenkins.tfstate"
-    region = "us-east-1"
-  }
+
 }
 
 provider "aws" {
