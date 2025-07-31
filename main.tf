@@ -24,15 +24,15 @@ resource "aws_instance" "managed_nodes" {
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
   tags = {
-    Name = "david_ansible_${element(var.tags, count.index )}"
-    stack = "david_ansible_project"
-    environment = "david_development"
+    Name = "ansible_${element(var.tags, count.index )}"
+    stack = "ansible_project"
+    environment = "development"
   }
 
 }
 
 resource "aws_iam_role" "aws_access" {
-  name = "awsrole-project-david"
+  name = "awsrole-project"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -56,12 +56,12 @@ resource "aws_iam_role_policy_attachment" "ecr_full_access" {
 }
 
 resource "aws_iam_instance_profile" "ec2-profile" {
-  name = "jenkins-project-profile-david"
+  name = "jenkins-project-profile"
   role = aws_iam_role.aws_access.name
 }
 
 resource "aws_security_group" "tf-sec-gr" {
-  name = "project208-sec-gr-david"
+  name = "project208-sec-gr"
   tags = {
     Name = "project208-sec-gr"
   }
