@@ -10,8 +10,8 @@
         name: '*'
         state: latest
 
-    - name: Remove docker if installed from RHEL repo
-      ansible.builtin.dnf:
+    - name: Remove docker if installed from CentOS repo
+      ansible.builtin.yum:
         name:
           - docker
           - docker-client
@@ -21,14 +21,12 @@
           - docker-latest-logrotate
           - docker-logrotate
           - docker-engine
-          - podman
-          - runc
         state: removed
 
-    - name: Install dnf-plugins-core and unzip
-      ansible.builtin.dnf:
+    - name: Install yum utils
+      ansible.builtin.yum:
         name: 
-          - dnf-plugins-core
+          - yum-utils
           - unzip
         state: latest
 
@@ -42,6 +40,7 @@
         name: docker-ce
         state: latest
 
+        
     - name: Add user ec2-user to docker group
       ansible.builtin.user:
         name: ec2-user
