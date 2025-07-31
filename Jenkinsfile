@@ -8,7 +8,7 @@ pipeline{
         AWS_REGION = "us-east-1"
         AWS_ACCOUNT_ID=sh(script:'aws sts get-caller-identity --query Account --output text', returnStdout:true).trim()
         ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-        APP_REPO_NAME = "clarusway-repo-david/cw-todo-app"
+        APP_REPO_NAME = "clarusway-repo/cw-todo-app"
     }
 
     stages{ 
@@ -86,7 +86,7 @@ pipeline{
                 sh 'ansible --version'
                 // sh 'sleep 180'
                 sh 'ansible-inventory --graph'
-                ansiblePlaybook credentialsId: 'davidskey', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory_aws_ec2.yml', playbook: 'docker-project.yml'
+                ansiblePlaybook credentialsId: 'project208', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory_aws_ec2.yml', playbook: 'docker-project.yml'
              }
         }
 
